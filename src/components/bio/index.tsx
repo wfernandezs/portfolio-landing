@@ -8,8 +8,18 @@ import {
   Terminal,
   Monitor,
   Figma,
+  Award,
 } from "lucide-react";
 import { SkillSection, Skill } from "./SkillSection";
+
+// Add a new interface for certifications
+interface Certification {
+  name: string;
+  issuer: string;
+  year: string;
+  image: string;
+  link?: string;
+}
 
 export const Bio: React.FC = () => {
   const backendSkills: Skill[] = [
@@ -48,6 +58,18 @@ export const Bio: React.FC = () => {
     { name: "Postman", icon: Terminal, level: 4 },
   ];
 
+  // Add certifications data
+  const certifications: Certification[] = [
+    {
+      name: "AWS Certified Developer - Associate",
+      issuer: "Amazon Web Services",
+      year: "2024",
+      image:
+        "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+      link: "https://www.credly.com/badges/1e2a528f-31b8-4760-858f-46d513ee815f",
+    },
+  ];
+
   return (
     <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
       <h3 className="text-xl font-bold text-cyan-400 mb-6">About Me</h3>
@@ -69,6 +91,49 @@ export const Bio: React.FC = () => {
           When I'm not coding, you can find me reading about new technologies,
           contributing to open-source projects, or exploring the outdoors.
         </p>
+      </div>
+
+      {/* Add Certifications Section */}
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-cyan-400 mb-4">Certifications</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="bg-gray-800/70 rounded-lg p-4 border border-gray-700 hover:border-cyan-400/30 transition-colors flex flex-col items-center"
+            >
+              <div className="mb-3 w-28 h-28 relative">
+                <img
+                  src={cert.image}
+                  alt={cert.name}
+                  className="w-full h-full object-contain"
+                />
+                <div className="absolute -top-2 -right-2">
+                  <Award className="w-6 h-6 text-yellow-400" />
+                </div>
+              </div>
+              <h4 className="text-cyan-400 font-medium text-center text-sm mb-1">
+                {cert.name}
+              </h4>
+              <div className="text-gray-400 text-xs text-center">
+                {cert.issuer}
+              </div>
+              <div className="text-gray-500 text-xs text-center mt-1">
+                {cert.year}
+              </div>
+              {cert.link && (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 text-xs text-cyan-400 hover:text-cyan-300"
+                >
+                  Verify
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mb-6">
