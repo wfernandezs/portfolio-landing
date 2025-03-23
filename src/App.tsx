@@ -338,7 +338,9 @@ function App() {
       {/* Footer */}
       <footer className="border-t border-gray-800 mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-center text-gray-400">
-          <p>Built with React & Tailwind CSS • Cyberpunk-inspired design</p>
+          <p>
+            Made with <span className="text-pink-400">♥</span>
+          </p>
         </div>
       </footer>
     </div>
