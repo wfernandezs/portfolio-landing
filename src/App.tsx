@@ -91,9 +91,9 @@ function App() {
   );
 
   return (
-    <div className="h-screen bg-gray-900 text-gray-100 flex flex-col overflow-hidden">
+    <div className="min-h-screen bg-gray-900 text-gray-100 flex flex-col">
       {/* Hero Section */}
-      <div className="relative h-[40vh] min-h-[300px] flex items-center">
+      <div className="relative h-[30vh] min-h-[250px] flex items-center">
         <ParticlesBackground />
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-cyan-900/20 to-pink-900/20" />
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,9 +119,9 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-hidden bg-gray-900">
-        <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex-1 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-wrap gap-2 mb-6">
             <TabButton tab="projects" current={activeTab} icon={Code2}>
               Projects
             </TabButton>
@@ -133,9 +133,9 @@ function App() {
             </TabButton>
           </div>
 
-          <div className="h-[calc(60vh-8rem)] overflow-auto">
+          <div className="space-y-6">
             {activeTab === "projects" && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                   <div
                     key={index}
@@ -209,15 +209,15 @@ function App() {
             )}
 
             {activeTab === "bio" && (
-              <div className="space-y-4">
-                <div className="bg-gray-800/50 rounded-lg p-4 sm:p-6 border border-gray-700">
+              <div className="space-y-6">
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
                   <div className="flex items-center mb-4">
                     <User className="w-6 h-6 text-purple-400 mr-3" />
                     <h3 className="text-xl font-bold text-cyan-400">
                       About Me
                     </h3>
                   </div>
-                  <p className="text-gray-300 leading-relaxed mb-4 text-sm">
+                  <p className="text-gray-300 leading-relaxed mb-4">
                     Backend Developer with more than 7 years of experience in
                     multi-platform web technologies, using JavaScript, Python,
                     and Java. Focused on delivering quality code and
@@ -229,11 +229,9 @@ function App() {
                   </p>
                   <div className="flex items-center text-gray-400 mb-4">
                     <MapPin className="w-4 h-4 mr-2 text-pink-400" />
-                    <span className="text-sm">
-                      Available for remote opportunities worldwide
-                    </span>
+                    <span>Available for remote opportunities worldwide</span>
                   </div>
-                  <div className="mb-4">
+                  <div>
                     <img
                       src="https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
                       alt="AWS Certified Developer - Associate"
@@ -242,24 +240,24 @@ function App() {
                   </div>
                 </div>
 
-                <div className="bg-gray-800/50 rounded-lg p-4 sm:p-6 border border-gray-700">
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
                   <div className="flex items-center mb-4">
                     <BookOpen className="w-6 h-6 text-purple-400 mr-3" />
                     <h3 className="text-xl font-bold text-cyan-400">
                       Skills & Expertise
                     </h3>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-base font-semibold text-purple-400 mb-2">
                         Languages
                       </h4>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {["JavaScript/TypeScript", "Python", "Java"].map(
                           (tech) => (
                             <span
                               key={tech}
-                              className="px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-300"
+                              className="px-2 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300"
                             >
                               {tech}
                             </span>
@@ -271,11 +269,11 @@ function App() {
                       <h4 className="text-base font-semibold text-purple-400 mb-2">
                         Technologies/Frameworks
                       </h4>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {["Node.js", "Django"].map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-300"
+                            className="px-2 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300"
                           >
                             {tech}
                           </span>
@@ -286,7 +284,7 @@ function App() {
                       <h4 className="text-base font-semibold text-purple-400 mb-2">
                         Databases
                       </h4>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {[
                           "PostgreSQL",
                           "SQL Server",
@@ -296,7 +294,7 @@ function App() {
                         ].map((db) => (
                           <span
                             key={db}
-                            className="px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-300"
+                            className="px-2 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300"
                           >
                             {db}
                           </span>
@@ -307,7 +305,7 @@ function App() {
                       <h4 className="text-base font-semibold text-purple-400 mb-2">
                         Cloud & DevOps
                       </h4>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {[
                           "AWS",
                           "Azure",
@@ -320,7 +318,7 @@ function App() {
                         ].map((tool) => (
                           <span
                             key={tool}
-                            className="px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-300"
+                            className="px-2 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300"
                           >
                             {tool}
                           </span>
@@ -331,11 +329,11 @@ function App() {
                       <h4 className="text-base font-semibold text-purple-400 mb-2">
                         Version Control & CI/CD
                       </h4>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-2">
                         {["Git", "GitHub Actions", "Gitlab"].map((tool) => (
                           <span
                             key={tool}
-                            className="px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-300"
+                            className="px-2 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300"
                           >
                             {tool}
                           </span>
@@ -348,17 +346,17 @@ function App() {
             )}
 
             {activeTab === "contact" && (
-              <div className="bg-gray-800/50 rounded-lg p-4 sm:p-6 border border-gray-700">
+              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
                 <h3 className="text-xl font-bold text-cyan-400 mb-6">
                   Get in Touch
                 </h3>
                 <div className="space-y-4">
                   <a
                     href="mailto:walter.fernandez@proton.me"
-                    className="flex items-center p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
+                    className="flex items-center p-4 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
                   >
                     <Mail className="w-5 h-5 text-purple-400 mr-3" />
-                    <span className="text-gray-300 text-sm">
+                    <span className="text-gray-300">
                       walter.fernandez@proton.me
                     </span>
                   </a>
@@ -367,24 +365,20 @@ function App() {
                     href="https://www.linkedin.com/in/walter-fernandez-sanchez-a3924354/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
+                    className="flex items-center p-4 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
                   >
                     <Linkedin className="w-5 h-5 text-purple-400 mr-3" />
-                    <span className="text-gray-300 text-sm">
-                      LinkedIn Profile
-                    </span>
+                    <span className="text-gray-300">LinkedIn Profile</span>
                   </a>
 
                   <a
                     href="https://github.com/wfernandezs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
+                    className="flex items-center p-4 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
                   >
                     <Github className="w-5 h-5 text-purple-400 mr-3" />
-                    <span className="text-gray-300 text-sm">
-                      GitHub Profile
-                    </span>
+                    <span className="text-gray-300">GitHub Profile</span>
                   </a>
                 </div>
               </div>
@@ -394,8 +388,8 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 text-center text-gray-400 text-sm">
+      <footer className="border-t border-gray-800 mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-gray-400">
           Made with <span className="text-pink-400">♥</span>
         </div>
       </footer>
