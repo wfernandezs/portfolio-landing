@@ -8,9 +8,83 @@
   }
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(34, 211, 238, 0.3),
+                 0 0 60px rgba(168, 85, 247, 0.2),
+                 0 0 90px rgba(236, 72, 153, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(34, 211, 238, 0.4),
+                 0 0 80px rgba(168, 85, 247, 0.3),
+                 0 0 120px rgba(236, 72, 153, 0.2);
+  }
+}
+
+.name-glow {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    rgba(34, 211, 238, 0.1),
+    rgba(168, 85, 247, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+.project-thumbnail {
+  aspect-ratio: 16/9;
+  @apply relative overflow-hidden rounded-lg mb-4;
+}
+
+.project-thumbnail img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.project-thumbnail:hover img {
+  @apply scale-105;
+}
+
+.project-thumbnail .overlay {
+  @apply absolute inset-0 bg-gray-900/80 flex items-center justify-center 
+         opacity-0 transition-opacity duration-300;
+}
+
+.project-thumbnail:hover .overlay {
+  @apply opacity-100;
+}
+
+.logo-container {
+  @apply relative w-12 h-12;
+}
+
+.logo-container svg {
+  @apply absolute inset-0 transition-all duration-500;
+}
+
+.logo-container:hover svg {
+  @apply scale-110 rotate-12;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,9 +97,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-cyan-800;
-}
-
-/* Smooth transitions */
-* {
-  @apply transition-colors duration-200;
 }
