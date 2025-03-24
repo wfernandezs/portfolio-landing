@@ -4,14 +4,15 @@ import { Project } from "../../types";
 import { Server, Database, Code } from "lucide-react";
 
 interface ProjectsProps {
-  projects: Project[];
+  // For future use if needed
+  projects?: Project[];
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  // You can either use the first 3 projects from props
-  // const displayProjects = projects.slice(0, 3);
+export const Projects: React.FC<ProjectsProps> = () => {
+  // For future use if props are needed
+  // const displayProjects = props.projects?.slice(0, 3);
 
-  // Or define specific featured projects
+  // Currently using hardcoded featured projects
   const featuredProjects: Project[] = [
     {
       title: "API Gateway Service",
