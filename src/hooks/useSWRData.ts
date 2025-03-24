@@ -21,6 +21,7 @@ const fetcher = async <T>(fetchFunction: () => Promise<ApiResponse<T>>, fallback
     const response = await fetchFunction();
     
     if (response.error) {
+      // eslint-disable-next-line no-console
       console.error(`Error fetching data: ${response.error.message}`);
       if (fallbackData) {
         return fallbackData;

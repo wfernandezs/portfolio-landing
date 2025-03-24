@@ -12,6 +12,7 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects: propProjects }) => {
   // Use the hook to fetch projects data from API
   const { projects: fetchedProjects, isLoading, isError } = useProjects();
+  const hasProjects = fetchedProjects.length > 0 || (propProjects && propProjects.length > 0);
   
   // Use projects from props if provided, otherwise use fetched projects
   const displayProjects = propProjects || fetchedProjects;
@@ -22,6 +23,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects: propProjects }) =>
 
   if (isError && !propProjects) {
     return <ErrorMessage message="Failed to load projects. Please try again later." />;
+  }
+  
+  if (!hasProjects) {
+    return null;
   }
 
   return (

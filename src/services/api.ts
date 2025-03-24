@@ -7,6 +7,7 @@ import {
   ApiResponse 
 } from '../types';
 import { Server, Database, Code } from 'lucide-react';
+import React from 'react';
 
 // Create an axios instance with base URL from environment variable
 const API_URL = import.meta.env.VITE_API_URL || 'https://your-strapi-cms-url.com/api';
@@ -22,6 +23,7 @@ const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // eslint-disable-next-line no-console
     console.error('API Error:', error);
     return Promise.reject(error);
   }
@@ -69,6 +71,12 @@ export const fetchBio = async (): Promise<ApiResponse<BioContent>> => {
   return fetchData<BioContent>('/bio');
 };
 
+// Create icon element functions
+const createServerIcon = () => React.createElement(Server, { className: "w-8 h-8 text-cyan-400" });
+const createDatabaseIcon = () => React.createElement(Database, { className: "w-8 h-8 text-purple-400" });
+const createCodeIcon = () => React.createElement(Code, { className: "w-8 h-8 text-pink-400" });
+const createDefaultIcon = () => React.createElement(Code, { className: "w-8 h-8 text-gray-400" });
+
 // Fallback data in case API is unavailable
 export const getFallbackProjects = (): Project[] => {
   return [
@@ -82,7 +90,7 @@ export const getFallbackProjects = (): Project[] => {
       demo: "https://api-gateway-demo.yourdomain.com",
       preview:
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
-      icon: <Server className="w-8 h-8 text-cyan-400" />,
+      icon: createServerIcon(),
     },
     {
       id: "2",
@@ -93,7 +101,7 @@ export const getFallbackProjects = (): Project[] => {
       github: "https://github.com/wfernandezs/db-migration-tool",
       preview:
         "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=800&q=80",
-      icon: <Database className="w-8 h-8 text-purple-400" />,
+      icon: createDatabaseIcon(),
     },
     {
       id: "3",
@@ -105,7 +113,7 @@ export const getFallbackProjects = (): Project[] => {
       demo: "https://wfernandezs.github.io/react-components",
       preview:
         "https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80",
-      icon: <Code className="w-8 h-8 text-pink-400" />,
+      icon: createCodeIcon(),
     },
   ];
 };
@@ -113,12 +121,11 @@ export const getFallbackProjects = (): Project[] => {
 // Convert Strapi icon name to Lucide icon
 export const getIconComponent = (iconName: string) => {
   // This function would map Strapi icon names to actual React components
-  const iconMap: Record<string, React.ReactNode> = {
-    'server': <Server className="w-8 h-8 text-cyan-400" />,
-    'database': <Database className="w-8 h-8 text-purple-400" />,
-    'code': <Code className="w-8 h-8 text-pink-400" />,
-    // Add more mappings as needed
+  const iconMap: Record<string, () => React.ReactNode> = {
+    'server': createServerIcon,
+    'database': createDatabaseIcon,
+    'code': createCodeIcon,
   };
   
-  return iconMap[iconName] || <Code className="w-8 h-8 text-gray-400" />;
+  return (iconMap[iconName] || createDefaultIcon)();
 };
