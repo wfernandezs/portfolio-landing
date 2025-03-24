@@ -10,6 +10,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - Contact information
 - AWS certification badge
 - Cyberpunk-inspired UI
+- **NEW: Dynamic content management with Strapi CMS**
 
 ## Technologies Used
 
@@ -18,6 +19,8 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - Tailwind CSS
 - Vite
 - Lucide React Icons
+- SWR for data fetching and caching
+- Strapi CMS for content management
 
 ## Local Development
 
@@ -32,12 +35,32 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
    npm install
    ```
 
-3. Start the development server:
+3. Create a `.env` file based on `.env.example` and set your Strapi API URL and token
+
+4. Start the development server:
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## CMS Integration
+
+This project uses Strapi CMS for content management. The following sections are managed through Strapi:
+
+- Projects
+- Skills
+- Certifications
+- Bio (About Me)
+
+### Setting up Strapi
+
+See the README in the `strapi-backend` directory for instructions on setting up the Strapi backend.
+
+### Environment Variables
+
+- `VITE_API_URL`: URL for the Strapi API (e.g., "http://localhost:1337/api")
+- `VITE_API_TOKEN`: Your Strapi API token for authentication
 
 ## Building for Production
 
@@ -73,10 +96,19 @@ Your site will be available at: `https://yourusername.github.io/your-repo-name/`
 ```
 portfolio/
 ├── src/
-│   ├── App.tsx           # Main application component
-│   ├── main.tsx         # Application entry point
-│   └── index.css        # Global styles
-├── public/              # Static assets
+│   ├── components/     # React components
+│   │   ├── bio/        # Bio section components
+│   │   ├── projects/   # Projects section components
+│   │   └── ...         # Other components
+│   ├── hooks/          # Custom React hooks
+│   ├── services/       # API services
+│   ├── types/          # TypeScript types
+│   ├── App.tsx         # Main application component
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global styles
+├── public/             # Static assets
+├── strapi-backend/     # Strapi CMS backend
+├── .env.example        # Example environment variables
 ├── index.html          # HTML template
 ├── vite.config.ts      # Vite configuration
 ├── tailwind.config.js  # Tailwind CSS configuration
@@ -85,10 +117,9 @@ portfolio/
 
 ## Customization
 
-1. Update personal information in `App.tsx`
-2. Modify the color scheme in Tailwind classes
-3. Add or remove projects in the projects array
-4. Update contact information and social links
+1. Update content through the Strapi admin panel
+2. Modify the color scheme in Tailwind classes if needed
+3. Extend Strapi content types for additional information
 
 ## License
 

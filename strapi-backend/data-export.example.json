@@ -1,0 +1,168 @@
+{
+  "projects": [
+    {
+      "title": "API Gateway Service",
+      "description": "High-performance API gateway built with Node.js, featuring rate limiting and request validation",
+      "tech": ["Node.js", "Express", "Redis"],
+      "github": "https://github.com/wfernandezs/api-gateway",
+      "demo": "https://api-gateway-demo.yourdomain.com",
+      "preview": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+      "icon": "server"
+    },
+    {
+      "title": "Database Migration Tool",
+      "description": "A CLI tool for managing database migrations across different environments with rollback support",
+      "tech": ["TypeScript", "PostgreSQL", "Docker"],
+      "github": "https://github.com/wfernandezs/db-migration-tool",
+      "preview": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=800&q=80",
+      "icon": "database"
+    },
+    {
+      "title": "React Component Library",
+      "description": "A reusable UI component library built with React and TypeScript, with Storybook documentation",
+      "tech": ["React", "TypeScript", "Storybook"],
+      "github": "https://github.com/wfernandezs/react-components",
+      "demo": "https://wfernandezs.github.io/react-components",
+      "preview": "https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80",
+      "icon": "code"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Node.js",
+      "level": 5,
+      "category": "Backend Development"
+    },
+    {
+      "name": "Express",
+      "level": 5,
+      "category": "Backend Development"
+    },
+    {
+      "name": "NestJS",
+      "level": 4,
+      "category": "Backend Development"
+    },
+    {
+      "name": "MongoDB",
+      "level": 4,
+      "category": "Backend Development"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 4,
+      "category": "Backend Development"
+    },
+    {
+      "name": "Redis",
+      "level": 3,
+      "category": "Backend Development"
+    },
+    {
+      "name": "GraphQL",
+      "level": 3,
+      "category": "Backend Development"
+    },
+    {
+      "name": "REST APIs",
+      "level": 5,
+      "category": "Backend Development"
+    },
+    {
+      "name": "Docker",
+      "level": 4,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "Kubernetes",
+      "level": 3,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "AWS",
+      "level": 4,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "CI/CD",
+      "level": 4,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "GitHub Actions",
+      "level": 4,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "Terraform",
+      "level": 3,
+      "category": "DevOps & Cloud"
+    },
+    {
+      "name": "React",
+      "level": 4,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "TypeScript",
+      "level": 5,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "TailwindCSS",
+      "level": 4,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "HTML/CSS",
+      "level": 4,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "Responsive Design",
+      "level": 4,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "UI/UX Basics",
+      "level": 3,
+      "category": "Frontend Development"
+    },
+    {
+      "name": "Git",
+      "level": 5,
+      "category": "Tools & Utilities"
+    },
+    {
+      "name": "VS Code",
+      "level": 5,
+      "category": "Tools & Utilities"
+    },
+    {
+      "name": "Jest",
+      "level": 4,
+      "category": "Tools & Utilities"
+    },
+    {
+      "name": "Postman",
+      "level": 4,
+      "category": "Tools & Utilities"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "year": "2024",
+      "image": "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+      "link": "https://www.credly.com/badges/1e2a528f-31b8-4760-858f-46d513ee815f"
+    }
+  ],
+  "bio": {
+    "paragraphs": [
+      "Fullstack Developer with more than 7 years of experience in multi-platform web technologies, using JavaScript, Python, and Java. Focused on delivering quality code and performance, and migrating solution to serverless architecture with AWS and Azure. Implement serverless functions and propose transition to cloud solution oriented resources. Enjoy performing onboarding and refinement tasks, both in remote and on-site environments.",
+      "My background includes working with startups and established companies, handling everything from architecture design to implementation and deployment. I take pride in writing clean, tested, and documented code.",
+      "When I'm not coding, you can find me reading about new technologies, practicing piano and guitar, or playing video games."
+    ]
+  }
+}
