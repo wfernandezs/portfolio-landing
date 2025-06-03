@@ -36,7 +36,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
       description: "Microservices-based e-commerce application with client gateway, auth and payment services",
       tech: ["NestJS", "MongoDB", "Prisma", "Stripe"],
       github: "https://github.com/nest-microservices-koa/products-launcher",
-      preview: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=800&q=80",
+      preview: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80",
       icon: <Server className="w-8 h-8 text-purple-400" />,
     },
     {
@@ -44,7 +44,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
       description: "A RESTful API for event management built with Go, Gin, and GORM",
       tech: ["Go", "Gin", "GORM", "RESTful API"],
       github: "https://github.com/wfernandezs/event-api",
-      preview: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=800&q=80",
+      preview: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80",
       icon: <Database className="w-8 h-8 text-cyan-400" />,
     },
   ];
