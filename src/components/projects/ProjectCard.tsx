@@ -45,15 +45,17 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         ))}
       </div>
       <div className="flex items-center gap-4">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-sm text-cyan-400 hover:text-cyan-300"
-        >
-          <Github className="w-4 h-4 mr-2" />
-          Source
-        </a>
+        {project.github && project.github !== "#" && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-sm text-cyan-400 hover:text-cyan-300"
+          >
+            <Github className="w-4 h-4 mr-2" />
+            Source
+          </a>
+        )}
         {project.demo && (
           <a
             href={project.demo}

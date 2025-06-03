@@ -1,7 +1,7 @@
 import React from "react";
 import { ProjectCard } from "./ProjectCard";
 import { Project } from "../../types";
-import { Server, Database, Code } from "lucide-react";
+import { Server, Globe, Code, Database } from "lucide-react";
 
 interface ProjectsProps {
   // For future use if needed
@@ -15,36 +15,37 @@ export const Projects: React.FC<ProjectsProps> = () => {
   // Currently using hardcoded featured projects
   const featuredProjects: Project[] = [
     {
-      title: "API Gateway Service",
-      description:
-        "High-performance API gateway built with Node.js, featuring rate limiting and request validation",
-      tech: ["Node.js", "Express", "Redis"],
-      github: "https://github.com/wfernandezs/api-gateway",
-      demo: "https://api-gateway-demo.yourdomain.com",
-      preview:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
-      icon: <Server className="w-8 h-8 text-cyan-400" />,
+      title: "TTT Grupo Morikawa Website",
+      description: "Digital platform showcasing environmental technologies for habitat restoration and water treatment",
+      tech: ["JavaScript", "HTML", "CSS", "Environmental Tech"],
+      github: "#",
+      demo: "https://tttgrupomorikawa.com",
+      preview: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80",
+      icon: <Globe className="w-8 h-8 text-green-400" />,
     },
     {
-      title: "Database Migration Tool",
-      description:
-        "A CLI tool for managing database migrations across different environments with rollback support",
-      tech: ["TypeScript", "PostgreSQL", "Docker"],
-      github: "https://github.com/wfernandezs/db-migration-tool",
-      preview:
-        "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=800&q=80",
-      icon: <Database className="w-8 h-8 text-purple-400" />,
+      title: "Personal Portfolio",
+      description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS",
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/wfernandezs/portfolio-landing",
+      preview: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+      icon: <Code className="w-8 h-8 text-blue-400" />,
     },
     {
-      title: "React Component Library",
-      description:
-        "A reusable UI component library built with React and TypeScript, with Storybook documentation",
-      tech: ["React", "TypeScript", "Storybook"],
-      github: "https://github.com/wfernandezs/react-components",
-      demo: "https://wfernandezs.github.io/react-components",
-      preview:
-        "https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80",
-      icon: <Code className="w-8 h-8 text-pink-400" />,
+      title: "Products Launcher",
+      description: "Microservices-based e-commerce application with client gateway, auth and payment services",
+      tech: ["NestJS", "MongoDB", "Prisma", "Stripe"],
+      github: "https://github.com/nest-microservices-koa/products-launcher",
+      preview: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=800&q=80",
+      icon: <Server className="w-8 h-8 text-purple-400" />,
+    },
+    {
+      title: "Event Management API",
+      description: "A RESTful API for event management built with Go, Gin, and GORM",
+      tech: ["Go", "Gin", "GORM", "RESTful API"],
+      github: "https://github.com/wfernandezs/event-api",
+      preview: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=800&q=80",
+      icon: <Database className="w-8 h-8 text-cyan-400" />,
     },
   ];
 
@@ -57,7 +58,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
         Featured Projects
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {displayProjects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
