@@ -19,7 +19,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
       description: "Digital platform showcasing environmental technologies for habitat restoration and water treatment",
       tech: ["JavaScript", "HTML", "CSS", "Environmental Tech"],
       github: "#",
-      demo: "https://tttgrupomorikawa.com",
+      demo: "https://www.tttgrupomorikawa.com/",
       preview: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80",
       icon: <Globe className="w-8 h-8 text-green-400" />,
     },
@@ -28,7 +28,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
       description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS",
       tech: ["React", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/wfernandezs/portfolio-landing",
-      preview: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+      preview: "/assets/personal-portfolio.jpg",
       icon: <Code className="w-8 h-8 text-blue-400" />,
     },
     {
