@@ -12,9 +12,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "i18next": "^25.2.1",
+    "i18next-browser-languagedetector": "^8.1.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.5.2",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^2.12.0"
   },

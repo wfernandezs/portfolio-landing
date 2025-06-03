@@ -1,11 +1,13 @@
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "../../types";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { t } = useTranslation();
   return (
     <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 hover:border-cyan-400/50 transition-colors group animated-gradient">
       {project.preview && (
@@ -23,7 +25,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               className="overlay"
             >
               <span className="px-4 py-2 bg-cyan-400/20 border border-cyan-400/50 rounded-lg text-cyan-400 backdrop-blur-sm">
-                View Demo
+                {t('viewDemo')}
               </span>
             </a>
           )}
@@ -53,7 +55,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             className="flex items-center text-sm text-cyan-400 hover:text-cyan-300"
           >
             <Github className="w-4 h-4 mr-2" />
-            Source
+            {t('source')}
           </a>
         )}
         {project.demo && (
@@ -63,7 +65,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             rel="noopener noreferrer"
             className="flex items-center text-sm text-purple-400 hover:text-purple-300"
           >
-            Live Demo
+            {t('liveDemo')}
             <ExternalLink className="w-4 h-4 ml-1" />
           </a>
         )}

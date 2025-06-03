@@ -1,10 +1,13 @@
 import React from "react";
 import { Mail, Linkedin, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Contact: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
-      <h3 className="text-xl font-bold text-cyan-400 mb-6">Get in Touch</h3>
+      <h3 className="text-xl font-bold text-cyan-400 mb-6">{t('getInTouch')}</h3>
       <div className="space-y-4">
         <a
           href="mailto:walter.fernandez@proton.me"

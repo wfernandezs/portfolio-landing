@@ -11,6 +11,7 @@ import {
   Award,
 } from "lucide-react";
 import { SkillSection, Skill } from "./SkillSection";
+import { useTranslation } from "react-i18next";
 
 // Add a new interface for certifications
 interface Certification {
@@ -22,6 +23,7 @@ interface Certification {
 }
 
 export const Bio: React.FC = () => {
+  const { t } = useTranslation();
   const backendSkills: Skill[] = [
     { name: "Node.js", icon: Server, level: 5 },
     { name: "Express", icon: Server, level: 5 },
@@ -72,7 +74,7 @@ export const Bio: React.FC = () => {
 
   return (
     <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
-      <h3 className="text-xl font-bold text-cyan-400 mb-6">About Me</h3>
+      <h3 className="text-xl font-bold text-cyan-400 mb-6">{t('aboutMe')}</h3>
 
       <div className="mb-8">
         <p className="text-gray-300 mb-4">
@@ -128,7 +130,7 @@ export const Bio: React.FC = () => {
                   rel="noopener noreferrer"
                   className="mt-2 text-xs text-cyan-400 hover:text-cyan-300"
                 >
-                  Verify
+                  {t('verify')}
                 </a>
               )}
             </div>
@@ -137,28 +139,28 @@ export const Bio: React.FC = () => {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-cyan-400 mb-4">Skills</h3>
+        <h3 className="text-xl font-bold text-cyan-400 mb-4">{t('skills')}</h3>
 
         <SkillSection
-          title="Backend Development"
+          title={t('backendDev')}
           skills={backendSkills}
           iconColor="text-purple-400"
         />
 
         <SkillSection
-          title="DevOps & Cloud"
+          title={t('devopsCloud')}
           skills={devOpsSkills}
           iconColor="text-cyan-400"
         />
 
         <SkillSection
-          title="Frontend Development"
+          title={t('frontend')}
           skills={frontendSkills}
           iconColor="text-pink-400"
         />
 
         <SkillSection
-          title="Tools & Utilities"
+          title={t('tools')}
           skills={toolsSkills}
           iconColor="text-amber-400"
         />

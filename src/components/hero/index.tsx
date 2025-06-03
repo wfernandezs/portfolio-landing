@@ -1,8 +1,11 @@
 import React from "react";
 import { Terminal } from "lucide-react";
 import { ParticlesBackground } from "../ParticlesBackground";
+import { useTranslation } from "react-i18next";
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="relative h-[30vh] min-h-[250px] flex items-center">
       <ParticlesBackground />
@@ -15,12 +18,10 @@ export const Hero: React.FC = () => {
               WALTER FERNÁNDEZ
             </h1>
             <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-cyan-400">
-              NODE.JS DEVELOPER
+              {t('developer')}
             </h2>
             <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-              Specialized in building scalable backend solutions, microservices,
-              and cloud architecture. Experienced in AWS and Azure cloud
-              platforms.
+              {t('specialization')}
             </p>
           </div>
         </div>
